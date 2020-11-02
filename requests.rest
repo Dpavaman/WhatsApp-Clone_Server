@@ -1,0 +1,35 @@
+GET http://localhost:8080
+
+###
+
+POST http://localhost:8080/messages/new
+Content-Type: application/json
+
+{
+    "message" : "Let's Check this",
+    "sender" : "Kalya",
+    "timestamp" : "timestamp",
+    "received" : false,
+    "toRoom" :"5f915bb080fb7f25380c7136"
+}
+
+
+###
+
+GET http://localhost:8080/messages/sync
+
+###
+
+POST http://localhost:8080/createRoom
+Content-Type: application/json
+
+{
+    "roomName" : "My Private Room",
+    "conversations" : [
+        {"message": "Hello, How are you ?", "sender": "Pavaman", "timeStamp": "timestamp", "received": true}
+    ]
+}
+
+###
+
+GET http://localhost:8080/messages/sync/5f915bb080fb7f25380c7136
